@@ -36,7 +36,7 @@ class AlienInvasion:
             pygame.display.flip()
 
     def _check_events(self):
-        player_speed = 20
+    
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 sys.exit()
@@ -45,9 +45,13 @@ class AlienInvasion:
                     #Move the ship to the right.
                     self.ship.moving_right = True
                     #Move the ship to the left
-            elif event.type ==pygame.KEYUP:
+                elif event.key == pygame.K_LEFT:
+                    self.ship.moving_left = True
+            elif event.type == pygame.KEYUP:
                 if event.key == pygame.K_RIGHT:
                         self.ship.moving_right = False
+                if event.key == pygame.K_LEFT:
+                        self.ship.moving_left = False
                     
 
 
